@@ -10,10 +10,17 @@ const [currentlyVisible, setVisibleComponent] = useState("List");
 
   // function setting 'currentlyVisibleCOmponent' based on state
   const setVisible =  () => {
+
     if(currentlyVisible === "List") {
-      return <BoardList />
+      return {
+       component: <BoardList />,
+       buttontext: "AddBoard"
+      } 
     } else {
-      <BoardForm />
+      return {
+        component: <BoardForm />,
+        buttontext: "Back"
+       } 
     }
   }
 
@@ -28,8 +35,8 @@ const [currentlyVisible, setVisibleComponent] = useState("List");
   const currentlyVisibleComponent = setVisible()
   return(
     <React.Fragment>
-      {currentlyVisibleComponent}
-      <button onClick={handleSetVisibleComponent}></button>
+      {currentlyVisibleComponent.component}
+      <button onClick={handleSetVisibleComponent}>{currentlyVisibleComponent.buttontext}</button>
     </React.Fragment>
   );
 }
