@@ -1,6 +1,6 @@
-import {React, useState } from 'react';
+import React from 'react';
 import BoardView from './BoardView';
-import PostView from './PostView';
+// import PostView from './PostView';
 
 // const [boardListVisible, setBoardListVisible] = useState(true);
 // const [postListVisible, setPostListVisible] = useState(false);
