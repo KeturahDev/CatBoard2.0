@@ -9,7 +9,7 @@ function Board(props) {
   );
 }
 
-Board.proptypes = {
+Board.propTypes = {
 boardId: PropTypes.number,
 name: PropTypes.string,
 description: PropTypes.string,
