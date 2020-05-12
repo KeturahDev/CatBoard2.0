@@ -28,6 +28,8 @@ _You have the ability to edit, create, observe, and delete objects in the databa
 
 ### API Endpoints
 
+*View Swagger Documentation for the api by running api and going to http://localhost:5000/swagger/index.html*
+
 BOARDS
 ```
 GET /api/boards
