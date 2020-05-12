@@ -1,7 +1,8 @@
-// import React, {useState} from 'react';
-// import PostList from './PostList';
-// import PostForm from "./PostForm";
+import React, {useState} from 'react';
 
-// function PostView() {
 
-// }
+function PostView() {
+
+}
+
+export default PostView;
