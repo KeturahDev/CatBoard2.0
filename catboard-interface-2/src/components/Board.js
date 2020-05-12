@@ -6,6 +6,7 @@ function Board(props) {
   return(
     <div>
       <h2>{board.name}</h2>
+
     </div>
   );
 }

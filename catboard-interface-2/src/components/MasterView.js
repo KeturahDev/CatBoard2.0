@@ -18,6 +18,7 @@ function MasterView() {
   return(
     <React.Fragment>
       <BoardView />
+      {/* <PostView /> */}
     </React.Fragment>
   )
 }
