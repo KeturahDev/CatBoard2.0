@@ -1,18 +1,21 @@
 import React from 'react';
-import BoardForm from './BoardForm';
 import PostList from './PostList';
-import PropTypes from 'prop-types'
+import PropTypes from 'prop-types';
 
 function BoardDetails(props){
   const { board } = props;
   
+  const boardPosts = board.posts
+
   return(
     <React.Fragment>
-      <div>
-        <h2>Board Details</h2>
+      <div style={{border: "2px solid red"}}>
+        <h2>Board Details!!</h2>
         <img src={board.bannerImage} alt="banner image"/>
         <h3>{board.name}</h3>
         <h3>{board.description}</h3>
+        <hr/>
+        <PostList posts={boardPosts} />
       </div>
     </React.Fragment>
   );
@@ -21,4 +24,5 @@ function BoardDetails(props){
 BoardDetails.propTypes = {
   board: PropTypes.object
 }
+
 export default BoardDetails;
