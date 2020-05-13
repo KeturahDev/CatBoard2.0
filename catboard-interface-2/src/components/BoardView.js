@@ -27,15 +27,15 @@ const [selectedBoard, setBoard] = useState(null);
 
   // function setting 'currentlyVisibleCOmponent' based on state
   const setVisible =  () => {
-    // if(selectedBoard != null) {
-    //   return {
-    //     component: <PostView />,
-    //     buttontext: ""
-    //   } else {
-    if(currentlyVisible === "List") {
+    if(selectedBoard != null) {
+      return {
+        component: <PostView />,
+        buttontext: "Back to Boards"
+      }
+    } else if(currentlyVisible === "List") {
       return {
        component: <BoardList onSelectingBoard={selectTheBoard} />,
-       buttontext: "AddBoard"
+       buttontext: "Add Board"
       } 
     } else {
       return {
@@ -44,11 +44,11 @@ const [selectedBoard, setBoard] = useState(null);
        } 
     }
   }
-
-  
     
   const handleSetVisibleComponent = () => {
-    if (currentlyVisible === "List") {
+    if (selectedBoard !== null) {
+      setBoard(null)
+    } else if (currentlyVisible === "List") {
       setVisibleComponent("Form")
     } else if (currentlyVisible === "Form") {
       setVisibleComponent("List")
