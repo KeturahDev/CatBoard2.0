@@ -10,7 +10,7 @@ _You have the ability to edit, create, observe, and delete objects in the databa
 
 ### Component Diagram
 
-![Screen Shot 2020-05-12 at 10 44 05 AM](https://user-images.githubusercontent.com/32975967/81727316-9d3a9700-943d-11ea-8fce-e8643b575d20.png)
+<img width="827" alt="Screen Shot 2020-05-12 at 4 10 49 PM" src="https://user-images.githubusercontent.com/32975967/81754526-3f24a880-946b-11ea-91c7-aac06c98c5f4.png">ß
 
 
 ### user stories:
