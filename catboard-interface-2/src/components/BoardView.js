@@ -20,17 +20,21 @@ const [selectedBoard, setBoard] = useState(null);
     });
   }
 
+  const selectTheBoard = (boardId) => {
+    setBoard(boardId);
+    console.log("Selectyed Board's ID is :", boardId)
+  }
+
   // function setting 'currentlyVisibleCOmponent' based on state
   const setVisible =  () => {
-    if(selectedBoard != null) {
-      return {
-        component: <PostView />,
-        buttontext: ""
-      }
-     } else {
+    // if(selectedBoard != null) {
+    //   return {
+    //     component: <PostView />,
+    //     buttontext: ""
+    //   } else {
     if(currentlyVisible === "List") {
       return {
-       component: <BoardList  />,
+       component: <BoardList onSelectingBoard={selectTheBoard} />,
        buttontext: "AddBoard"
       } 
     } else {
@@ -40,6 +44,8 @@ const [selectedBoard, setBoard] = useState(null);
        } 
     }
   }
+
+  
     
   const handleSetVisibleComponent = () => {
     if (currentlyVisible === "List") {
@@ -49,7 +55,6 @@ const [selectedBoard, setBoard] = useState(null);
     }
   }
 
-
     const currentlyVisibleComponent = setVisible()
     return(
       <React.Fragment>
@@ -58,5 +63,5 @@ const [selectedBoard, setBoard] = useState(null);
       </React.Fragment>
     );
   }
-}
+
 export default BoardView;

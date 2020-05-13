@@ -3,7 +3,7 @@ import Board from './Board';
 import PropTypes from 'prop-types';
 import BoardForm from './BoardForm';
 
-function BoardList() {
+function BoardList(props) {
   const [listofBoards, setBoardList] = useState([1,2]);
   const [isLoading, setIsLoading] = useState(false);
   // const [error, setError] = useState(null);
@@ -40,7 +40,9 @@ function BoardList() {
       <div style={{border: "2px solid purple"}}>
       <ul>
        {listofBoards.map((board, index) => 
-          <Board board={board}  key = {index} />
+        <div style={{border: "2px solid violet"}} onClick={() => props.onSelectingBoard(board.boardId)}>
+          <Board  board={board}  key = {index} />
+        </div>
        )}
       </ul>
       </div>
@@ -49,6 +51,7 @@ function BoardList() {
 }
 
 BoardList.propTypes = {
+  onSelectingBoard: PropTypes.func,
   name: PropTypes.string,
   boardId: PropTypes.number,
   description: PropTypes.string,
