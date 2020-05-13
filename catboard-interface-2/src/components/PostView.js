@@ -6,37 +6,34 @@ import PostDetails from './PostDetails';
 import PropTypes from 'prop-types'
 
 function PostView(props) {
-  // call upon database and retreive specific board info based upon id... (where id === id)
 
-  const [selectedBoard, setBoard] = useState([1,2]);
-  const [isLoading, setIsLoading] = useState(false);
+  const [view, setView] = useState(<p>Loading...</p>);
 
   useEffect(() => {
     get();}, []
   );
 
   const get = () => {
-    setIsLoading(true)
     fetch(
-        `http://localhost:5000/api/boards/${props.boardId}`,
+      `http://localhost:5000/api/boards/${props.boardId}`,
     {
     method: 'GET',
     })
       .then(res => res.json())
       .then(jsonifiedResponse => {
-        setBoard(jsonifiedResponse); //
-        setIsLoading(false); //
+        setView(<BoardDetails board={jsonifiedResponse}/>)
       })
-      .catch(error => 
-        console.log(error),
-        setIsLoading(false));
-    }
+      .catch(error =>
+        console.log(error)) 
+  }
  
+
   return (
     <React.Fragment>
       <div style={{border: "2px solid green"}}>
-        <p>{selectedBoard.name}</p>
-        <BoardDetails board={selectedBoard}/>
+        <div>
+          {view}
+        </div>
       </div>
     </React.Fragment>
   )
