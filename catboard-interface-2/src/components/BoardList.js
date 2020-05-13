@@ -35,9 +35,9 @@ function BoardList(props) {
     <React.Fragment>
       <div style={{border: "2px solid purple"}}>
       <ul>
-       {listofBoards.map((board) =>
-        <div style={{border: "2px solid violet"}} >
-          <Board  board={board} onClickFunc={props.onSelectingBoard} key={board.boardId} />
+       {listofBoards.map((board, index) =>
+        <div key={index} style={{border: "2px solid violet"}} >
+          <Board board={board} onClickFunc={props.onSelectingBoard}  />
         </div>
        )}
       </ul>
@@ -48,10 +48,10 @@ function BoardList(props) {
 
 BoardList.propTypes = {
   onSelectingBoard: PropTypes.func,
-  name: PropTypes.string,
-  boardId: PropTypes.number,
-  description: PropTypes.string,
-  bannerImage: PropTypes.string,
+  // name: PropTypes.string,
+  // boardId: PropTypes.number,
+  // description: PropTypes.string,
+  // bannerImage: PropTypes.string,
 
 }
 export default BoardList;
