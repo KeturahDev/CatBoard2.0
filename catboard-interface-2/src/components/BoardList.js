@@ -6,13 +6,14 @@ import BoardForm from './BoardForm';
 function BoardList(props) {
   const [listofBoards, setBoardList] = useState([1,2]);
   const [isLoading, setIsLoading] = useState(false);
+
   // const [error, setError] = useState(null);
-  
   // useEffect(() => {
   //   get();}, []
   // );
 
   useEffect(() => {
+    setIsLoading(true)
     fetch(
         'http://localhost:5000/api/boards', 
     { 
@@ -23,25 +24,20 @@ function BoardList(props) {
         setBoardList(response);
         setIsLoading(false);
       })
-      .catch(error => console.log(error));
-  }, []);
-
+      .catch(error => 
+        console.log(error),
+        setIsLoading(false)
+        );
+    }, []);
  
-
-//   public in t BoardId { get; set; }
-//   public string Name { get; set; }
-//   public string Description { get; set; }
-//   public string BannerImage { get; set; }
-//   public virtual ICollection<Post> Posts { get; set; }
-// }
    
   return(
     <React.Fragment>
       <div style={{border: "2px solid purple"}}>
       <ul>
-       {listofBoards.map((board, index) => 
-        <div style={{border: "2px solid violet"}} onClick={() => props.onSelectingBoard(board.boardId)}>
-          <Board  board={board}  key = {index} />
+       {listofBoards.map((board) =>
+        <div style={{border: "2px solid violet"}} >
+          <Board  board={board} onClickFunc={props.onSelectingBoard} key={board.boardId} />
         </div>
        )}
       </ul>
