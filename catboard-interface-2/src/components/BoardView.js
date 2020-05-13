@@ -29,7 +29,7 @@ const [selectedBoard, setBoard] = useState(null);
   const setVisible =  () => {
     if(selectedBoard != null) {
       return {
-        component: <PostView />,
+        component: <PostView boardId={selectedBoard} />,
         buttontext: "Back to Boards"
       }
     } else if(currentlyVisible === "List") {
