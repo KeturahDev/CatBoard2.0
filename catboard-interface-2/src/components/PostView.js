@@ -36,7 +36,7 @@ function PostView(props) {
     <React.Fragment>
       <div style={{border: "2px solid green"}}>
         <p>{selectedBoard.name}</p>
-        <BoardDetails />
+        <BoardDetails board={selectedBoard}/>
       </div>
     </React.Fragment>
   )
