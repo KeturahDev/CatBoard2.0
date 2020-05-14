@@ -36,13 +36,17 @@ function PostView(props) {
 
   const setVisibility = () => {
     console.log("SELECTEDPOST: ", selectedPostId)
+    console.log("CURRENTLYVIS: ", currentlyVisible)
     if (selectedPostId !== null) {
       return {
         component: <PostDetails />,
         buttontext: "Back to the Board"
       }
-    } else if (currentlyVisible === "BoardDetails") {
-      return {view}
+    } else if (currentlyVisible === "BoardDetails" && view) {
+      return {
+        component: view, 
+        buttontext: "Add Post"
+      }
     } else {
       return {
         component: <PostForm />,
@@ -55,7 +59,9 @@ function PostView(props) {
   return (
     <React.Fragment>
       <div style={{border: "2px solid green"}}>
+        <h3>Here Be the PostView</h3>
         <div>
+          {console.log(currentlyVisComponent)}
           {currentlyVisComponent.component}
         </div>
       </div>

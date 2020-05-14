@@ -34,6 +34,7 @@ function BoardList(props) {
   return(
     <React.Fragment>
       <div style={{border: "2px solid purple"}}>
+      <h1>Here be a list of boards</h1>
       <ul>
        {listofBoards.map((board, index) =>
         <div key={index} style={{border: "2px solid violet"}} >
