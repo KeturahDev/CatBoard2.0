@@ -1,4 +1,4 @@
-# _CatBaord2.0_
+# _CatBoard2.0_
 
 #### _An API that allows you to create, read, update, and delete cat object from a catboard database, 04/03/2020_
 
@@ -10,7 +10,7 @@ _You have the ability to edit, create, observe, and delete objects in the databa
 
 ### Component Diagram
 
-<img width="827" alt="Screen Shot 2020-05-12 at 4 10 49 PM" src="https://user-images.githubusercontent.com/32975967/81754526-3f24a880-946b-11ea-91c7-aac06c98c5f4.png">ß
+<img width="827" alt="Screen Shot 2020-05-12 at 4 10 49 PM" src="https://user-images.githubusercontent.com/32975967/81754526-3f24a880-946b-11ea-91c7-aac06c98c5f4.png">
 
 
 ### user stories:

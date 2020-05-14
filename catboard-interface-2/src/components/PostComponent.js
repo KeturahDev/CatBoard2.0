@@ -2,9 +2,12 @@ import React from 'react';
 import PropTypes from 'prop-types';
 
 function PostComponent(props) {
+
+  const {post} = props;
+  
   return(
-    <div>
-      <p>yaaaas?</p>
+    <div style={{border: "2px solid magenta"}} onClick={() => props.clickyclack(post.postId)}>
+      <p>{post.title}</p>
     </div>
   );
 }

@@ -15,14 +15,16 @@ function BoardDetails(props){
         <h3>{board.name}</h3>
         <h3>{board.description}</h3>
         <hr/>
-        <PostList posts={boardPosts} />
+        <PostList postId={props.postId} onSelectingPost={props.onSelectingPost} boardid={board.boardId} posts={boardPosts} />
       </div>
     </React.Fragment>
   );
 }
 
 BoardDetails.propTypes = {
-  board: PropTypes.object
+  board: PropTypes.object,
+  onSelectingPost: PropTypes.func,
+  postId: PropTypes.number
 }
 
 export default BoardDetails;
